@@ -134,18 +134,18 @@ List<String> list = ['apple', 'banana', 'cherry'];
 ```
 ## Common Operations in List:
 
-### Accessing elements:
+- ### Accessing elements:
 `var firstElement = list[0]; // Gets the first element`
 
-### Adding elements:
+- ### Adding elements:
 `list.add(6); // Adds an element at the end`
 
-### Inserting elements:
+- ### Inserting elements:
 `list.insert(1, 10); // Inserts 10 at index 1`
-### Removing elements:
+- ### Removing elements:
 `list.remove(2); // Removes the first occurrence of 2`
 
-### Iterating:
+- ### Iterating:
 ```
 for (var item in list) {
   print(item);
@@ -318,30 +318,30 @@ SharedPreferences is a key-value storage system used for storing simple data typ
 
 ### Basic Operations:
 
-### Adding/Updating Data:
+- ### Adding/Updating Data:
 ```
 SharedPreferences prefs = await SharedPreferences.getInstance();
 await prefs.setString('key', 'value');  // Save a string
 await prefs.setInt('key', 123);         // Save an integer
 ```
-### Retrieving Data:
+- ### Retrieving Data:
 ```
 SharedPreferences prefs = await SharedPreferences.getInstance();
 String? value = prefs.getString('key');  // Retrieve a string
 int? number = prefs.getInt('key');       // Retrieve an integer
 ```
-### Removing Data:
+- ### Removing Data:
 ```
 SharedPreferences prefs = await SharedPreferences.getInstance();
 await prefs.remove('key');  // Remove data associated with 'key'
 ```
 
-### Checking for Existence:
+- ### Checking for Existence:
 ```
 SharedPreferences prefs = await SharedPreferences.getInstance();
 bool containsKey = prefs.containsKey('key'); // Check if a key exists
 ```
-### Example:
+- ### Example:
 ```
 void saveUserPreference() async {
   SharedPreferences prefs = await SharedPreferences.getInstance();
