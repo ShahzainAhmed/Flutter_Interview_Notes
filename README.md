@@ -215,14 +215,14 @@ Maps in Dart store data as key-value pairs where each key is unique and maps to 
 
 ## 7) FutureBuilder vs StreamBuilder
 ### FutureBuilder
-**Purpose:** Used for one-time asynchronous operations.
+- **Purpose:** Used for one-time asynchronous operations.
 
-**Common Uses:** Ideal for tasks such as making HTTP requests, fetching data from a database, or performing one-off operations like capturing an image or reading device battery levels.
+- **Common Uses:** Ideal for tasks such as making HTTP requests, fetching data from a database, or performing one-off operations like capturing an image or reading device battery levels.
 
-**Behavior:** Handles a single result that is returned once. You can listen to the state of the future, which can be either:
-- waiting: The future is still being processed.
-- done: The future has completed with either success or an error.
-
+- **Behavior:** Handles a single result that is returned once. You can listen to the state of the future, which can be either:
+  - waiting: The future is still being processed.
+  - done: The future has completed with either success or an error.
+    
   ```
   FutureBuilder(
     future: fetchData(), // Function that returns a Future
@@ -238,11 +238,11 @@ Maps in Dart store data as key-value pairs where each key is unique and maps to 
   );
   ```
 ### StreamBuilder
-**Purpose:** Used for continuous data streams that can update over time.
+- **Purpose:** Used for continuous data streams that can update over time.
 
-**Common Uses:** Suitable for handling ongoing updates like real-time location tracking, live chat messages, or data that frequently changes.
+- **Common Uses:** Suitable for handling ongoing updates like real-time location tracking, live chat messages, or data that frequently changes.
 
-**Behavior:** Listens to a stream of data, updating the UI as new data is emitted. It can react to multiple data points over time
+- **Behavior:** Listens to a stream of data, updating the UI as new data is emitted. It can react to multiple data points over time
 
 ```
 StreamBuilder(
@@ -274,7 +274,7 @@ try {
 }
 ```
 
-## 9) APIs:
+## 9) REST APIs:
 
 ### GET API:
 ```
@@ -308,3 +308,10 @@ static postApi() async {
     }
   }
 ```
+
+## 10) SharedPreferences:
+SharedPreferences is a key-value storage system used for storing simple data types persistently across app sessions. It's commonly used to save user preferences, settings, or simple data like login information.
+
+- **Purpose:** To persistently store data that needs to be accessed across app restarts.
+
+- **Common Uses:** Saving user settings, app preferences, small amounts of data, and flags.
