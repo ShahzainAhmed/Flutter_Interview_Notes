@@ -356,3 +356,144 @@ void loadUserPreference() async {
 
 **Note:** SharedPreferences is suitable for small amounts of data. For larger data sets or more complex data structures, consider using other storage solutions like databases.
 
+# Draft to fix:
+```
+Will popscope: Handles back button actions by popping routes off the navigation stack.
+
+Get.offAll: Removes all previous routes and navigates to a new route.
+
+Get.off: Removes only the top route in the stack and navigates to a new route.
+
+SliverAppBar: A flexible app bar that can expand, contract, or remain pinned.
+
+BuildContext: Provides access to widget's location in the widget tree and its inherited widgets.
+
+List.generate vs ListView.builder vs ListView.separated:
+
+List.generate: Creates a list with a fixed number of items.
+ListView.builder: Lazily builds list items on demand.
+ListView.separated: Builds list items with separators between them.
+SizedBox vs Container:
+
+SizedBox: Simple box with a fixed size, often used for spacing.
+Container: More versatile, allows for decoration and constraints.
+SizedBox vs Spacer:
+
+SizedBox: Provides fixed spacing.
+Spacer: Flexibly takes up remaining space in a row or column.
+Stack: Allows widgets to overlap each other in a Z-order.
+
+Types of Colors:
+
+Hex code (e.g., #FF5733)
+General color names (e.g., Colors.red)
+Define a Color in a Class:
+
+dart
+Copy code
+static const kPrimaryColor = Colors.red;
+const keyword: Defines compile-time constants that cannot be changed.
+
+const vs final:
+
+const: Compile-time constant, value is fixed and immutable.
+final: Can be assigned once, but value is not known at compile time.
+Responsiveness other than ScreenUtil: Use MediaQuery to adapt layouts based on screen size and orientation.
+
+Stateful Widget inside Stateless Widget: Instantiate a StatefulWidget within a StatelessWidget if needed.
+
+GetX Controller: Manages state and business logic using GetX for efficient state management.
+
+APIs: Interface for different software systems to communicate and perform operations.
+
+OOP Pillars:
+
+Encapsulation
+Inheritance
+Polymorphism
+Abstraction
+Data Structures: Organize and store data efficiently (e.g., Lists, Maps).
+
+Expanded vs Flexible:
+
+Expanded: Takes all available space in its axis.
+Flexible: Takes only the space it needs.
+initState: Method called when a StatefulWidget is inserted into the widget tree.
+
+Immutable vs Mutable:
+
+Immutable: Cannot be changed after creation.
+Mutable: Can be modified after creation.
+Multilingual App: Supports multiple languages by using localization files and internationalization.
+
+APK vs IPA:
+
+APK: Android package file.
+IPA: iOS application file.
+Stateful Widget Lifecycle: Methods include initState, build, didChangeDependencies, dispose.
+
+Stateful vs Stateless:
+
+Stateful: Can change its state over time.
+Stateless: Immutable and cannot change its state.
+Var vs Dynamic:
+
+var: Type is inferred at compile time and cannot be changed.
+dynamic: Type can change at runtime.
+MVVM vs MVC:
+
+MVVM: Model-View-ViewModel, separates UI from business logic.
+MVC: Model-View-Controller, separates the application into models, views, and controllers.
+DartPad Task:
+
+dart
+Copy code
+void main() {
+  List numbers = [1, 2, 3, 3, 2, 8, 4, 5, 4, 5];
+  List uniqueNumbers = numbers.toSet().toList();
+  uniqueNumbers.sort();
+  print(uniqueNumbers);
+}
+Dio Package: A powerful HTTP client for making network requests.
+
+SharedPreferences: Stores simple key-value pairs persistently.
+
+Pagination: Loads data in chunks or pages to optimize performance and user experience.
+
+Statemanagement: Keeps track of and updates the state of the application.
+
+dispose(): Cleans up resources used by a StatefulWidget when it is removed from the widget tree.
+
+Notifications: Alerts users about events or updates.
+
+Animations: Adds visual movement or transitions to widgets.
+
+Payment Integration: Incorporates payment methods and processing into the app.
+
+Google Maps: Embeds and interacts with Google Maps in your app.
+
+Firebase Authentication: Handles user sign-in and sign-up using Firebase.
+
+Inkwell vs GestureDetector:
+
+Inkwell: Provides material touch feedback.
+GestureDetector: Detects gestures without visual feedback.
+Global Keys: Allows access to a widget's state from anywhere in the widget tree.
+
+Provider: A state management solution for providing data to widgets.
+
+Get.put vs Get.lazyPut:
+
+Get.put: Instantiates and injects a dependency immediately.
+Get.lazyPut: Instantiates the dependency only when it's needed.
+Abstract Class vs Static Class:
+
+Abstract Class: Cannot be instantiated directly; meant to be subclassed.
+Static Class: Not a Dart concept; typically refers to a class with only static members.
+How to Explain Classes and Objects: Classes are blueprints for creating objects, which are instances of these blueprints.
+
+setState() vs markNeedsBuild():
+
+setState(): Notifies Flutter to rebuild the widget with updated state.
+markNeedsBuild(): Internal method to mark a widget for rebuilding.
+```
