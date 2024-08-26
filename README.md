@@ -315,3 +315,44 @@ SharedPreferences is a key-value storage system used for storing simple data typ
 - **Purpose:** To persistently store data that needs to be accessed across app restarts.
 
 - **Common Uses:** Saving user settings, app preferences, small amounts of data, and flags.
+
+### Basic Operations:
+
+### Adding/Updating Data:
+```
+SharedPreferences prefs = await SharedPreferences.getInstance();
+await prefs.setString('key', 'value');  // Save a string
+await prefs.setInt('key', 123);         // Save an integer
+```
+### Retrieving Data:
+```
+SharedPreferences prefs = await SharedPreferences.getInstance();
+String? value = prefs.getString('key');  // Retrieve a string
+int? number = prefs.getInt('key');       // Retrieve an integer
+```
+### Removing Data:
+```
+SharedPreferences prefs = await SharedPreferences.getInstance();
+await prefs.remove('key');  // Remove data associated with 'key'
+```
+
+### Checking for Existence:
+```
+SharedPreferences prefs = await SharedPreferences.getInstance();
+bool containsKey = prefs.containsKey('key'); // Check if a key exists
+```
+### Example:
+```
+void saveUserPreference() async {
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  await prefs.setBool('isLoggedIn', true); // Save a boolean value
+}
+
+void loadUserPreference() async {
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  bool isLoggedIn = prefs.getBool('isLoggedIn') ?? false; // Default to false if not found
+}
+```
+
+**Note:** SharedPreferences is suitable for small amounts of data. For larger data sets or more complex data structures, consider using other storage solutions like databases.
+
