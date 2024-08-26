@@ -215,9 +215,54 @@ Maps in Dart store data as key-value pairs where each key is unique and maps to 
 
 ## 7) FutureBuilder vs StreamBuilder
 ### FutureBuilder
-For one-time asynchronous operations like HTTP requests.
+**Purpose:** Used for one-time asynchronous operations.
+
+**Common Uses:** Ideal for tasks such as making HTTP requests, fetching data from a database, or performing one-off operations like capturing an image or reading device battery levels.
+
+**Behavior:** Handles a single result that is returned once. You can listen to the state of the future, which can be either:
+- waiting: The future is still being processed.
+- done: The future has completed with either success or an error.
+
+  ```
+  FutureBuilder(
+    future: fetchData(), // Function that returns a Future
+    builder: (BuildContext context, AsyncSnapshot snapshot) {
+      if (snapshot.connectionState == ConnectionState.waiting) {
+        return CircularProgressIndicator(); // Loading indicator
+      } else if (snapshot.hasError) {
+        return Text('Error: ${snapshot.error}');
+      } else {
+        return Text('Data: ${snapshot.data}');
+      }
+    },
+  );
+  ```
 ### StreamBuilder
-For continuous data streams such as real-time updates or ongoing data feeds.
+**Purpose:** Used for continuous data streams that can update over time.
+
+**Common Uses:** Suitable for handling ongoing updates like real-time location tracking, live chat messages, or data that frequently changes.
+
+**Behavior:** Listens to a stream of data, updating the UI as new data is emitted. It can react to multiple data points over time
+
+```
+StreamBuilder(
+  stream: dataStream(), // Function that returns a Stream
+  builder: (BuildContext context, AsyncSnapshot snapshot) {
+    if (snapshot.connectionState == ConnectionState.waiting) {
+      return CircularProgressIndicator(); // Loading indicator
+    } else if (snapshot.hasError) {
+      return Text('Error: ${snapshot.error}');
+    } else {
+      return Text('Data: ${snapshot.data}');
+    }
+  },
+);
+```
+**Choosing Between Them:**
+
+Use FutureBuilder when you need to handle a single, one-time asynchronous result.
+
+Use StreamBuilder when you need to handle ongoing or continuous data updates
 
 ## 8) Error Handling:
 Use try-catch blocks to handle exceptions:
