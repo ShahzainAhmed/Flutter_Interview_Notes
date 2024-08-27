@@ -356,6 +356,39 @@ void loadUserPreference() async {
 
 **Note:** SharedPreferences is suitable for small amounts of data. For larger data sets or more complex data structures, consider using other storage solutions like databases.
 
+## 11) Dependency Injection:
+Dependency Injection (DI) is a design pattern used in software development where a class does not create its own dependencies but instead receives them from an external source. This approach promotes modularity, testability, and flexibility in your code.
+
+### Dependency Injection in Flutter with GetX:
+When using GetX in Flutter, if you're using methods like Get.put(), Get.lazyPut(), or Get.find() to manage your controllers and services, you are applying Dependency Injection.
+
+```
+class RiderHomeScreenController extends GetxController {
+    void sendOtp() {
+        // Code to send OTP
+    }
+
+    void showSnackbar() {
+        // Code to show snackbar
+    }
+}
+
+// In your screen
+final controller = Get.find<RiderHomeScreenController>();
+controller.sendOtp();
+```
+In this example, RiderHomeScreenController manages the logic for sending OTP and showing a snackbar. The RiderHomeScreen class retrieves the controller using Get.find(), which demonstrates Dependency Injection because the screen does not create the controller but relies on it being provided.
+
+### Get.lazyPut() and the fenix Property
+
+- **Usage:** The Get.lazyPut() method allows you to register a dependency that will only be created when it’s needed.
+- **fenix Property**: When set to true, if the controller is disposed of (e.g., when navigating away from a screen), it will be automatically recreated if needed again. If fenix is false, you need to manage the re-creation manually.
+
+### Summary
+**Dependencies:** These are the components (like services or controllers) that a class requires to function. In Dependency Injection, instead of the class creating its own dependencies, they are provided from an external source.
+
+**Benefits:** This pattern makes code more modular, easier to test, and more flexible. It allows for better management of dependencies, particularly in larger applications. 
+
 # Draft to fix:
 ```
 Will popscope: Handles back button actions by popping routes off the navigation stack.
