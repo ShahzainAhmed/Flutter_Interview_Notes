@@ -359,6 +359,15 @@ void loadUserPreference() async {
 ## 11) Dependency Injection:
 Dependency Injection (DI) is a design pattern used in software development where a class does not create its own dependencies but instead receives them from an external source. This approach promotes modularity, testability, and flexibility in your code.
 
+### Layman Example: Coffee Shop
+**Scenario:** Imagine a coffee shop where a person makes coffee.
+
+- **Without Dependency Injection:** The person making the coffee (the class) has to buy their own coffee beans (dependencies). This means they are tied to one specific store for the beans. If that store runs out or changes their beans, the person making coffee has to find a new store and change their setup, which can be a hassle.
+
+- **With Dependency Injection:** Instead of the person buying coffee beans themselves, the shop owner (the external source) provides the coffee beans when they need them. This way, the person making coffee can focus on making great coffee without worrying about where the beans come from. If the shop owner decides to switch to a different store for coffee beans, the person making coffee won’t be affected they can continue their work without any changes.
+
+This example illustrates how Dependency Injection helps separate the work of making coffee from the responsibility of sourcing the beans, making everything easier to manage.
+
 ### Dependency Injection in Flutter with GetX:
 When using GetX in Flutter, if you're using methods like Get.put(), Get.lazyPut(), or Get.find() to manage your controllers and services, you are applying Dependency Injection.
 
