@@ -17,14 +17,14 @@ myName = 86; // Works as dynamic allows type changes.
 ```
 ## 2) final vs const 
 ### final: 
-final doesn't use memory until access.
+Can be assigned once, but value is not known at compile time. final doesn't use memory until accessed.
 example: final a = 86; // doesn't use memory.
 print(a); // now will use memory.
 
 `final a = 86; // Memory is used when accessed.`
 
 ### const:
-Compile-time constant that is immutable and always uses memory from the start of declaration.
+A compile-time constant is a value that is fixed and immutable, known and determined at compile time. It is allocated memory as soon as it is declared and remains constant throughout the program.
 
 `const a = 86; // Uses memory at declaration.`
 
@@ -396,8 +396,7 @@ const keyword: Defines compile-time constants that cannot be changed.
 
 const vs final:
 
-const: Compile-time constant, value is fixed and immutable.
-final: Can be assigned once, but value is not known at compile time.
+
 Responsiveness other than ScreenUtil: Use MediaQuery to adapt layouts based on screen size and orientation.
 
 Stateful Widget inside Stateless Widget: Instantiate a StatefulWidget within a StatelessWidget if needed.
