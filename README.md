@@ -644,6 +644,29 @@ Widget build(BuildContext context) {
 }
 ```  
 
+## 20) Wrap :
+
+Wrap is a widget that displays its children in a horizontal or vertical array, wrapping them onto multiple lines or columns when there isn't enough space. It’s particularly useful for creating flexible layouts that adapt to varying screen sizes or content sizes.
+
+### Properties of Wrap:
+
+- **direction:** Specifies the direction of the wrap (horizontal or vertical).
+
+- **alignment:** Aligns children along the main axis (start, center, end, space between).
+
+- **spacing:** Sets the horizontal space between children (used in horizontal direction).
+
+- **runSpacing:** Sets the vertical space between lines of children (used in horizontal direction).
+
+- **runAlignment:** Aligns the runs along the cross axis (start, center, end, space between).
+
+- **crossAxisAlignment:** Aligns children along the cross axis (start, center, end).
+
+- **textDirection:** Determines the text direction (left-to-right or right-to-left).
+
+- **verticalDirection:** Specifies the vertical direction in which the children are laid out (upward or downward).
+
+- **clipBehavior:** Defines how the child widgets are clipped when they overflow (no clip, hard edge, or anti-aliased).
 
 ## draft to fix
 ```
