@@ -668,6 +668,31 @@ Wrap is a widget that displays its children in a horizontal or vertical array, w
 
 - **clipBehavior:** Defines how the child widgets are clipped when they overflow (no clip, hard edge, or anti-aliased).
 
+
+```
+body: Center(
+  child: Wrap(
+    spacing: 8.0, // Horizontal space between children
+    runSpacing: 4.0, // Vertical space between lines
+    alignment: WrapAlignment.start,
+    children: List.generate(
+      10,
+      (index) => Container(
+        width: 100.0,
+        height: 50.0,
+        color: Colors.blue[(index % 9 + 1) * 100],
+        child: Center(
+          child: Text(
+            'Item $index',
+            style: TextStyle(color: Colors.white),
+          ),
+        ),
+      ),
+    ),
+  ),
+),
+```
+
 ## draft to fix
 ```
 
