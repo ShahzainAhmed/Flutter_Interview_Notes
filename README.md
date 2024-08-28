@@ -222,7 +222,7 @@ Maps in Dart store data as key-value pairs where each key is unique and maps to 
 - **Behavior:** Handles a single result that is returned once. You can listen to the state of the future, which can be either:
   - waiting: The future is still being processed.
   - done: The future has completed with either success or an error.
-    
+      
   ```
   FutureBuilder(
     future: fetchData(), // Function that returns a Future
@@ -265,7 +265,8 @@ Use FutureBuilder when you need to handle a single, one-time asynchronous result
 Use StreamBuilder when you need to handle ongoing or continuous data updates
 
 ## 8) Error Handling:
-Use try-catch blocks to handle exceptions:
+- ### Try and Catch Blocks:
+  Ideal for handling exceptions in a controlled way when you know what specific errors might occur.
 ```
 try {
   // Code that might throw an exception
@@ -273,6 +274,58 @@ try {
   // Handle the exception
 }
 ```
+
+- ### Future Error Handling:
+Useful for handling errors in asynchronous code without using try and catch.
+```
+someAsyncFunction().catchError((error) {
+  // Handle the error
+  print('Caught error: $error');
+});
+```
+
+- ### Error Boundaries with Widgets:
+Best for handling errors in the widget tree, especially for unexpected errors during rendering.
+```
+ErrorWidget.builder = (FlutterErrorDetails details) {
+  return Center(child: Text('An unexpected error occurred.'));
+};
+```
+
+- ### Global Error Handling:
+Useful for catching errors that aren’t handled locally, such as uncaught exceptions or Flutter framework errors.
+```
+FlutterError.onError = (FlutterErrorDetails details) {
+  // Log or handle Flutter framework errors
+  print('Flutter error: ${details.exception}');
+};
+
+PlatformDispatcher.instance.onError = (Object error, StackTrace stack) {
+  // Log or handle Dart errors
+  print('Dart error: $error');
+  return true; // Returning true indicates the error is handled
+};
+```
+
+- ### Logging and Monitoring Tools:
+Essential for production environments where you need to capture and analyze errors.
+
+- Sentry:
+  
+`Sentry.captureException(exception, stackTrace: stackTrace);`
+
+- Firebase Crashlytics:
+  
+ `FirebaseCrashlytics.instance.recordError(exception, stackTrace);`
+
+### Summary of Best Approaches
+1. **Try and Catch Blocks:** For explicit error handling around risky operations.
+2. **Future Error Handling:** For asynchronous operations using .catchError.
+3. **Error Boundaries with Widgets:** For handling errors in the widget tree.
+4. **Global Error Handling:** For uncaught errors and general application-wide error management.
+5. **Logging and Monitoring Tools:** For capturing and analyzing errors in production environments.
+   
+Using these approaches, you can cover various scenarios for error handling in Flutter, ensuring robustness and resilience in your application.
 
 ## 9) REST APIs:
 
