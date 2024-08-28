@@ -523,19 +523,19 @@ ListView.separated(
 ```
 
 ## 17) SizedBox vs Container vs Spacer vs Stack :
-### SizedBox: 
+- ### SizedBox: 
 
 Simple box with a fixed size, often used for spacing. Has a property Child to use widgets. Decoration not allowed.
 
-### Container: 
+- ### Container: 
 
 Allows for decoration and has a property Child to use widgets.
 
-### Spacer: 
+- ### Spacer: 
 
 Flexibly takes up remaining space in a row or column.
 
-### Stack: 
+- ### Stack: 
 
 Allows widgets to overlap each other in a Z-order.
 
