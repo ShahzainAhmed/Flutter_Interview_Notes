@@ -471,54 +471,181 @@ In this example, RiderHomeScreenController manages the logic for sending OTP and
 
 **Benefits:** This pattern makes code more modular, easier to test, and more flexible. It allows for better management of dependencies, particularly in larger applications. 
 
-# Draft to fix:
+## 12) Will popscope:
+
+Handles back button actions by popping routes off the navigation stack.
+
+## 13) GetX Navigations:
+
+- **Get.offAll :** Removes all previous routes and navigates to a new route.
+- **Get.off :** Removes only the top route in the stack and navigates to a new route.
+  
+## 14) SliverAppBar:
+
+A flexible app bar that can expand, contract, or remain pinned.
+
+## 15) BuildContext:
+
+Provides access to widget's location in the widget tree and its inherited widgets.
+
+## 16) List Builders / List Creation Methods: 
+
+- ### List.generate:
+Creates a list with a fixed number of items.
 ```
-Will popscope: Handles back button actions by popping routes off the navigation stack.
+final List<Widget> myWidgets = List.generate(
+  10,
+  (index) => Text('Item $index'),
+);
+```
 
-Get.offAll: Removes all previous routes and navigates to a new route.
+- ### ListView.builder:
+Lazily builds list items on demand.
+```
+ListView.builder(
+  itemCount: 100,
+  itemBuilder: (context, index) => ListTile(
+    title: Text('Item $index'),
+  ),
+);
+```
+- ### ListView.separated:
 
-Get.off: Removes only the top route in the stack and navigates to a new route.
+Builds list items with separators between them.
+```
+ListView.separated(
+  separatorBuilder: (context, index) => SizedBox(width: 10),
+  itemCount: 100,
+  itemBuilder: (context, index) => ListTile(
+    title: Text('Item $index'),
+  ),
+);
+```
 
-SliverAppBar: A flexible app bar that can expand, contract, or remain pinned.
+## 17) SizedBox vs Container vs Spacer vs Stack :
+### SizedBox: 
 
-BuildContext: Provides access to widget's location in the widget tree and its inherited widgets.
+Simple box with a fixed size, often used for spacing. Has a property Child to use widgets. Decoration not allowed.
 
-List.generate vs ListView.builder vs ListView.separated:
+### Container: 
 
-List.generate: Creates a list with a fixed number of items.
-ListView.builder: Lazily builds list items on demand.
-ListView.separated: Builds list items with separators between them.
-SizedBox vs Container:
+Allows for decoration and has a property Child to use widgets.
 
-SizedBox: Simple box with a fixed size, often used for spacing.
-Container: More versatile, allows for decoration and constraints.
-SizedBox vs Spacer:
+### Spacer: 
 
-SizedBox: Provides fixed spacing.
-Spacer: Flexibly takes up remaining space in a row or column.
-Stack: Allows widgets to overlap each other in a Z-order.
+Flexibly takes up remaining space in a row or column.
 
-Types of Colors:
+### Stack: 
 
-Hex code (e.g., #FF5733)
-General color names (e.g., Colors.red)
-Define a Color in a Class:
+Allows widgets to overlap each other in a Z-order.
 
-dart
-Copy code
+## 18) Types of Colors : 
+
+- Hex code (e.g., #FF5733) <br>
+- General color names (e.g., Colors.red)
+
+**Defining a Color in a Class:**
+```
 static const kPrimaryColor = Colors.red;
 const keyword: Defines compile-time constants that cannot be changed.
+```
 
-const vs final:
+## 19) Responsiveness :
+
+### ScreenUtil Package
+
+- ### MediaQuery
+MediaQuery provides information about the size and orientation of the device’s screen, including pixel density, text scale factor, and more.
+
+**Use Case:** Adjusting layout or styling based on screen size or other device characteristics.
+
+ ```
+  Widget build(BuildContext context) {
+  final size = MediaQuery.of(context).size;
+  final width = size.width;
+  final height = size.height;
+  return Scaffold(
+    body: width > 600
+        ? Row(children: [/* Wide layout */])
+        : Column(children: [/* Narrow layout */]),
+  );
+ }
+ ```
+- ### LayoutBuilder
+LayoutBuilder provides the constraints passed to the widget by its parent, allowing you to build a widget tree based on the available space.
+
+**Use Case:** Dynamically adjusting the layout based on the constraints of the parent widget.
+ ```
+  Widget build(BuildContext context) {
+  return LayoutBuilder(
+    builder: (context, constraints) {
+      if (constraints.maxWidth > 600) {
+        return Row(children: [/* Wide layout */]);
+      } else {
+        return Column(children: [/* Narrow layout */]);
+      }
+    },
+  );
+}
+ ```
+- ### FractionallySizedBox
+FractionallySizedBox allows you to size a widget as a fraction of its parent’s size.
+
+**Use Case:** Making sure widgets take up a proportion of the available space, regardless of the screen size.
+ ```
+ FractionallySizedBox(
+  widthFactor: 0.8,
+  child: Container(
+    color: Colors.blue,
+  ),
+);
+ ```
+
+- ### Flexible and Expanded Widgets
+Flexible and Expanded widgets are used within Flex-based widgets (like Row and Column) to allocate space based on available space and proportions.
+
+**Use Case:** Adjusting how child widgets take up space in a flexible layout.
+```
+Row(
+  children: [
+    Expanded(child: Container(color: Colors.red)),
+    Expanded(child: Container(color: Colors.green)),
+  ],
+);
+```
+- ### AspectRatio
+AspectRatio forces a widget to maintain a specific aspect ratio.
+
+**Use Case:** Ensuring that widgets keep a consistent ratio regardless of the screen size.
+```
+AspectRatio(
+  aspectRatio: 16 / 9,
+  child: Container(
+    color: Colors.orange,
+  ),
+);
+```
+- ### OrientationBuilder
+OrientationBuilder rebuilds the widget tree based on the device's orientation (portrait or landscape).
+
+**Use Case:** Adapting layout or style based on whether the device is in portrait or landscape mode.
+
+```
+Widget build(BuildContext context) {
+  return OrientationBuilder(
+    builder: (context, orientation) {
+      return Scaffold(
+        body: orientation == Orientation.portrait
+            ? Column(children: [/* Portrait layout */])
+            : Row(children: [/* Landscape layout */]),
+      );
+    },
+  );
+}
+```  
 
 
-Responsiveness other than ScreenUtil: Use MediaQuery to adapt layouts based on screen size and orientation.
-
-Stateful Widget inside Stateless Widget: Instantiate a StatefulWidget within a StatelessWidget if needed.
-
-GetX Controller: Manages state and business logic using GetX for efficient state management.
-
-APIs: Interface for different software systems to communicate and perform operations.
+```
 
 OOP Pillars:
 
