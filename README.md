@@ -427,11 +427,17 @@ You focus solely on combining the ground coffee with hot water to make coffee.
 
 ### Key Takeaways
 
-**Modular:** The coffee maker focuses on making coffee, while a class focuses on its main task, not on creating dependencies.
+**Modular:** 
 
-**Testable:** You can easily replace coffee beans or water (dependencies) without changing how the coffee maker works, just like swapping dependencies for testing in programming.
+The coffee maker focuses on making coffee, while a class focuses on its main task, not on creating dependencies.
 
-**Flexible:** If the assistant changes the coffee type, you can still make coffee without altering your method. In programming, you can change dependencies without modifying the core logic of the class.
+**Testable:** 
+
+You can easily replace coffee beans or water (dependencies) without changing how the coffee maker works, just like swapping dependencies for testing in programming.
+
+**Flexible:** 
+
+If the assistant changes the coffee type, you can still make coffee without altering your method. In programming, you can change dependencies without modifying the core logic of the class.
 
 This analogy illustrates how Dependency Injection simplifies management, testing, and adaptability in programming.
 
