@@ -692,6 +692,56 @@ body: Center(
   ),
 ),
 ```
+## Advanced topics draft:
+
+```
+Abstraction (use cases, examples u used)
+
+2) Multiple Inheritance:
+does dart support multiple inheritance?
+
+Answer:
+Dart doesnt support this, but u can achieve this idea or phenomenon by Mixins. 
+
+3) Mixins: 
+
+4) Lifecycle of App: 
+app termination, background me chali jati he, how to monitor that state
+
+5) Different state managements 
+
+6) Favourite state management 
+Answer:
+Bloc , because it is testatble and maintnable code.
+
+7) Have u done any project that was on a complete different state management, and suddenly you had to change the statemanagement to a different one. 
+
+Answer:
+Recent code in provider, shifted to BLoC 
+
+8) Singleton patterns:
+singleton patterns u can create multiple instance? 
+
+technically u can, but it overlaps the definition of singleton
+
+9) Coupling and Decoupling
+
+10) Dependency injections (purpose, benefits) answer:
+solves coupling and decoupling issues.
+
+11) Do you write Tests? 
+
+12) Isolates (purpose, why we use it)
+
+13) Mounted keyword
+
+14) u have 12 balls, indentify one ball is broken, how many attempts will u take to solve this? 
+u can use divide and concur rule (hint)
+
+15) you have a word SHOPPING, identify the characters that are replicated or duplicated as 'PP', u have to identify its frequency
+Answer:
+U can use hash map (hint)
+```
 
 ## draft to fix
 ```
