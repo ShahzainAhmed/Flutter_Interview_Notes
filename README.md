@@ -1,5 +1,6 @@
 ## Flutter Interview Preperation Notes
 
+```
 Learn these now:
 Some of the topics discussed were: 
 Stateful vs Stateless Widgets
@@ -21,6 +22,7 @@ API Security
 API Data Leakage Prevention
 API Calls in initState() vs build()
 Firebase Deployment Challenges
+```
 
 ## 1) var vs dynamic 
 ### var: 
