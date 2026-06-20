@@ -1,5 +1,27 @@
 ## Flutter Interview Preperation Notes
 
+Learn these now:
+Some of the topics discussed were: 
+Stateful vs Stateless Widgets
+Provider State Management
+setState()
+Hot Reload vs Hot Restart
+BuildContext
+JSON Parsing (.fromJson / .toJson)
+Debugging Flutter Apps
+SQL vs NoSQL
+List, Set & Map
+main axis vs cross axis alignment 
+Production vs Development 
+Navigation (Push, Pop, PushReplacement)
+implementation of REST APIs
+what's DIO? 
+await, Future, async?
+API Security
+API Data Leakage Prevention
+API Calls in initState() vs build()
+Firebase Deployment Challenges
+
 ## 1) var vs dynamic 
 ### var: 
 The type is inferred at initialization and cannot be changed later (type cannot be changed)
